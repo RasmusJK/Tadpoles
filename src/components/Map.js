@@ -9,6 +9,7 @@ const Map=()=>{
     useEffect(()=> {
         getBeaches().then();
         console.log("rarara",beach);
+        // eslint-disable-next-line
     },[]);
 
     const getBeaches = async ()=>{

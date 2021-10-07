@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {useState} from "react";
 import {Button, Drawer} from "@mui/material";
 import  {makeStyles} from "@mui/styles";
-
+import {useHistory} from 'react-router-dom';
 const useStyles = makeStyles(() => ({
 
     drawer: {
@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const TopBar=()=> {
+    const history = useHistory();
     const  [open, setOpen]= useState(false);
     const handleDrawer = () =>{
         setOpen(true);
@@ -53,12 +54,7 @@ const TopBar=()=> {
                     setOpen(false);
                     }}>
                 <div className={classes.drawer}>
-
-
-                    <Button >Login</Button>
-
-
-
+                    <Button onClick={()=>{history.push('/escaperooms')}} >Escape room</Button>
                 </div>
             </Drawer>
         </div>
