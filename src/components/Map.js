@@ -1,10 +1,11 @@
 import '../App.css';
 import React,{useEffect,useState} from "react";
 import {MapContainer, Marker, TileLayer} from "react-leaflet";
+import {useHistory} from "react-router-dom";
 
 
 const Map=()=>{
-
+    const history= useHistory();
     const [beach,setBeach]= useState([]);
     useEffect(()=> {
         getBeaches().then();
@@ -32,7 +33,17 @@ const Map=()=>{
                     <Marker
                         key={b.id}
                         position={[b.location.lat,b.location.lon]}
+                       /* onClick={()=>{
+                            //history.push(`/beach/${b.id}`)
+                            console.log("clicked")
 
+                        }} */
+                        eventHandlers={{
+                            click: (e) => {
+                                console.log('marker clicked', e);
+                                history.push(`/beach/${b.id}`);
+                            },
+                        }}
                     />
                 ))}
             </MapContainer>
