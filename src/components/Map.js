@@ -3,7 +3,7 @@ import React,{useEffect,useState} from "react";
 import {MapContainer, Marker, TileLayer} from "react-leaflet";
 
 
-const Beach=()=>{
+const Map=()=>{
 
     const [beach,setBeach]= useState([]);
     useEffect(()=> {
@@ -41,4 +41,4 @@ const Beach=()=>{
 
 }
 
-export default Beach;
+export default Map;
