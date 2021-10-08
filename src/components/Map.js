@@ -9,13 +9,14 @@ const Map=()=>{
     const [beach,setBeach]= useState([]);
     useEffect(()=> {
         getBeaches().then();
-        console.log("rarara",beach);
+
         // eslint-disable-next-line
     },[]);
 
     const getBeaches = async ()=>{
         const response = await fetch('https://open-api.myhelsinki.fi/v1/places/?tags_search=Beach');
         const data = await response.json();
+        console.log("data", JSON.stringify(data))
         setBeach(data.data);
 
     };
