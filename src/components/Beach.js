@@ -82,18 +82,19 @@ const Beach = ({match}) => {
     return (
         <div>
             <TopBar/>
+            <div className="App">
             {error && <div>Something went wrong ...</div>}
             {loading ?(
                 <div>Loading...</div>
             ) :(
                 <div>
-                    <p>{beachId}</p>
+
                     <p>{beachNameEn}</p>
                     <p>{address}</p>
                     <p>{description}</p>
                 </div>
             ) }
-
+            </div>
         </div>
     );
 

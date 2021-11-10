@@ -1,11 +1,24 @@
 import '../App.css';
 import React from "react";
+import {useHistory} from "react-router-dom";
+import {Button} from "@mui/material";
+
 
 
 const EscapeRoomList=()=>{
+    const history= useHistory();
     return(
-        <div>
-            <p>List of escape rooms here</p>
+        <div className="App">
+
+            <ul>
+                <Button variant="contained" onClick={()=>{history.push('/escaperoom')}}>
+                    <p>Hietaranta Escape room</p>
+                </Button>
+                <Button variant="contained" onClick={()=>{history.push('/escaperoom')}}>
+                    <p>Uunisaari Escape room</p>
+                </Button>
+            </ul>
+
         </div>
     );
 
