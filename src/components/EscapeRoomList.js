@@ -10,7 +10,7 @@ const EscapeRoomList=()=>{
     return(
         <div className="App">
 
-            <ul>
+            <ul className="App">
                 <Button variant="contained" onClick={()=>{history.push('/escaperoom')}}>
                     <p>Hietaranta Escape room</p>
                 </Button>
