@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Tadpoles/static/css/main.2dea727b.chunk.css",
+    "main.js": "/Tadpoles/static/js/main.222e160a.chunk.js",
+    "main.js.map": "/Tadpoles/static/js/main.222e160a.chunk.js.map",
+    "runtime-main.js": "/Tadpoles/static/js/runtime-main.f3c054d6.js",
+    "runtime-main.js.map": "/Tadpoles/static/js/runtime-main.f3c054d6.js.map",
+    "static/js/2.0157fbb8.chunk.js": "/Tadpoles/static/js/2.0157fbb8.chunk.js",
+    "static/js/2.0157fbb8.chunk.js.map": "/Tadpoles/static/js/2.0157fbb8.chunk.js.map",
+    "static/js/3.b8b100cd.chunk.js": "/Tadpoles/static/js/3.b8b100cd.chunk.js",
+    "static/js/3.b8b100cd.chunk.js.map": "/Tadpoles/static/js/3.b8b100cd.chunk.js.map",
+    "index.html": "/Tadpoles/index.html",
+    "static/css/main.2dea727b.chunk.css.map": "/Tadpoles/static/css/main.2dea727b.chunk.css.map",
+    "static/js/2.0157fbb8.chunk.js.LICENSE.txt": "/Tadpoles/static/js/2.0157fbb8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3c054d6.js",
+    "static/js/2.0157fbb8.chunk.js",
+    "static/css/main.2dea727b.chunk.css",
+    "static/js/main.222e160a.chunk.js"
+  ]
+}
