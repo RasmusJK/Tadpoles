@@ -1,6 +1,6 @@
 import '../App.css';
 import React, {useEffect, useState} from "react";
-import {Button} from "@mui/material";
+// {Button} from "@mui/material";
 import axios from "axios";
 import TopBar from "./TopBar";
 /*
@@ -27,11 +27,11 @@ const Beach = ({match}) => {
 
     console.log("match params", match.params.id);
     const Id = parseInt(match.params.id);
-    const [beachId,setBeachId]= useState("");
+ //   const [beachId,setBeachId]= useState("");
     const [beachNameEn, setBeachNameEn] = useState("");
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
-    const [image, setImage] =useState("");
+  //  const [image, setImage] =useState("");
     const [water, setWater] = useState("Dataa ei ole saatavilla");
     const [temp, setTemp] = useState("Dataa ei ole saatavilla");
     let sensor = "E703";
@@ -72,7 +72,7 @@ try {
                 setTemp(allWeather.data.data[allWeather.data.data.length-1].temp_air)
             }
 
-            setBeachId(allDataBeach.data.id);
+          //  setBeachId(allDataBeach.data.id);
             setBeachNameEn(allDataBeach.data.name.fi);
             setAddress(allDataBeach.data.location.address.street_address);
             setDescription(allDataBeach.data.description.body);

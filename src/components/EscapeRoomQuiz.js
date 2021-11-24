@@ -10,14 +10,14 @@ const EscapeRoomQuiz=()=>{
     const [currQuestion, setCurrQuestion] =useState(0);
     const [optionChosen,setOptionChosen] = useState("");
     const next = () =>{
-        if(Questions[currQuestion].answer == optionChosen){
+        if(Questions[currQuestion].answer === optionChosen){
             setScore(score+1);
         }
        // alert(score);
         setCurrQuestion(currQuestion+1)
     };
     const finish = () => {
-        if(Questions[currQuestion].answer == optionChosen){
+        if(Questions[currQuestion].answer === optionChosen){
             setScore(score+1);
         }
         setGameState("end");

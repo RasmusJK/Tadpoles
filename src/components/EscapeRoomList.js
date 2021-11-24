@@ -9,14 +9,15 @@ import axios from "axios";
 const EscapeRoomList=()=>{
     const history= useHistory()
     const [beaches, setBeaches] = useState([]);
-    const addButton = (beach) =>{
+ /*   const addButton = (beach) =>{
         return(   <Button variant="contained" onClick={()=>{history.push('/escaperoom')}}>
             <p>{beach}</p>
         </Button>);
-    }
+    } */
     const fetchData=() =>{
         axios.get('https://open-api.myhelsinki.fi/v1/places/?tags_search=Beach').then((res )=>{
            console.log(res.data);
+            // eslint-disable-next-line array-callback-return
             res.data.data.map(b =>{
                 //console.log(b.name.fi)
                 setBeaches(beaches =>[...beaches,b.name.fi ])
