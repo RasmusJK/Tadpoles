@@ -1,12 +1,12 @@
 .App {background-color: white;
-  height: 680px;
+  height: 480px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.leaflet-container {background-color: yellow;
+.leaflet-container {background-color: orange;
   width: 98%;
   height: 90vh;
   border: 2px solid rgb(46, 114, 216)e;
@@ -41,9 +41,9 @@
 }
 
 
-.EscapeRoom {background-color: rgb(46, 114, 216);
-  width: 1600px;
-  height: 650px;
+.EscapeRoom {background-color: rgb(255, 251, 251);
+  width: 320px;
+  height: 480px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,11 +52,11 @@
 }
 .Quiz {
   background-color: white;
-  width: 1300px;
-  height: 560px;
-  border-radius: 10px violet;
-  color:rgb(29, 4, 97);
-  padding: 20px 40px;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px orange;
+  color:rgb(3, 0, 8);
+  padding: 130px 40px;
 
 
   display: flex;
@@ -75,7 +75,7 @@
 }
 .App Button {
   background: orange;
-  width: 300px;
+  width: 200px;
   height: 90px;
   margin: 5px;
   border: none;
