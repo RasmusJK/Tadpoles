@@ -143,7 +143,7 @@ try {
                 <div>Loading...</div>
             ) :(
                 <div>
-                    <image>placeholder image here</image>
+
                     <p>{beachNameEn}</p>
                     <p>{address}</p>
                     <p>{description}</p>

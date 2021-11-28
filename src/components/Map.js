@@ -18,6 +18,7 @@ const Map = () => {
     }, []);
 
     const getBeaches = async () => {
+       // const response = await fetch('https://cors-anywhere.herokuapp.com/open-api.myhelsinki.fi/v1/places/?tags_search=Beach');
         const response = await fetch('https://open-api.myhelsinki.fi/v1/places/?tags_search=Beach');
         const data = await response.json();
         setBeach(data.data);
