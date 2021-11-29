@@ -85,8 +85,8 @@ const TopBar=()=> {
                 <div className={classes.drawer}>
                     {user ? <Typography align="center">{localStorage.getItem("user")}</Typography>: <Typography> </Typography>}
                     <Button onClick={()=>{history.push('/escaperooms')}} >Escape room</Button>
-                    <Button onClick={signIn} >Login</Button>
-                    <Button onClick={logOut} >Logout</Button>
+                    {!user ?<Button onClick={signIn} >Login</Button>:<Button onClick={logOut} >Logout</Button> }
+
 
                 </div>
             </Drawer>

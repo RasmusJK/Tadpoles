@@ -15,7 +15,7 @@ const EscapeRoomList=()=>{
         </Button>);
     } */
     const fetchData=() =>{
-        axios.get('https://open-api.myhelsinki.fi/v1/places/?tags_search=Beach').then((res )=>{
+        axios.get('https://node-proxy-server-v2.herokuapp.com/').then((res )=>{
            console.log(res.data);
             // eslint-disable-next-line array-callback-return
             res.data.data.map(b =>{

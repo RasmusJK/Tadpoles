@@ -58,7 +58,7 @@ try {
     }else if (Id === 143) {
         sensor="4FB9";
     }
-    const beachData =axios.get(`https://open-api.myhelsinki.fi/v1/place/${Id}`);
+    const beachData =axios.get(`https://node-proxy-server-v2.herokuapp.com/${Id}`);
     console.log("BeachDATA",beachData)
     const weatherData = axios.get(`https://iot.fvh.fi/opendata/uiras/70B3D5705000${sensor}_v1.json`);
     axios.all([beachData,weatherData]).then(
