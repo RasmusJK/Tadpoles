@@ -24,8 +24,8 @@ const EscapeRoomQuiz=()=>{
     }
     return(
         <div className="Quiz">
-            <h1>{Questions[currQuestion].story}</h1>
-            <h1>{Questions[currQuestion].prompt}</h1>
+            <h2>{Questions[currQuestion].story}</h2>
+            <h2>{Questions[currQuestion].prompt}</h2>
             <div className="Options">
                 <Button variant="contained" onClick={()=>{setOptionChosen("A")}}>{Questions[currQuestion].optionA} </Button>
                 <Button variant="contained" onClick={()=>{setOptionChosen("B")}}>{Questions[currQuestion].optionB} </Button>

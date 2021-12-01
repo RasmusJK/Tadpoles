@@ -44,7 +44,8 @@
   flex-direction: column;
 }
 .Quiz {
-  width: 500px;
+  width: 100%;
+  max-width: 300px;
   height: 500px;
   border-radius: 10px;
 
@@ -61,6 +62,7 @@
   border: none;
   border-radius: 5px;
   font-size: 20px;
+
 }
 .App Button {
   background: orangered;
