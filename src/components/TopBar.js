@@ -9,6 +9,11 @@ import {useState} from "react";
 import {Button, Drawer} from "@mui/material";
 import  {makeStyles} from "@mui/styles";
 import {useHistory} from 'react-router-dom';
+
+import {auth} from '../Utils/firebase';
+import {signInWithPopup, GoogleAuthProvider, signOut} from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 const useStyles = makeStyles(() => ({
 
     drawer: {
@@ -19,13 +24,37 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
+
 const TopBar=()=> {
     const history = useHistory();
     const  [open, setOpen]= useState(false);
+    const [user, loading, error] = useAuthState(auth);
+
     const handleDrawer = () =>{
         setOpen(true);
     }
     const classes = useStyles();
+    const signIn =() =>{
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((res)=>{
+                console.log(res);
+                localStorage.setItem("user", res.user.displayName)
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+
+    };
+    const logOut = () =>{
+        signOut(auth).then(() => {
+            console.log("signed out");
+            localStorage.clear()
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     return (
         <div>
         <Box sx={{ flexGrow: 1 }}>
@@ -40,7 +69,7 @@ const TopBar=()=> {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} align="center" onClick={()=>{history.push('/')}}>
                         Beach App
                     </Typography>
 
@@ -54,7 +83,11 @@ const TopBar=()=> {
                     setOpen(false);
                     }}>
                 <div className={classes.drawer}>
+                    {user ? <Typography align="center">{localStorage.getItem("user")}</Typography>: <Typography> </Typography>}
                     <Button onClick={()=>{history.push('/escaperooms')}} >Escape room</Button>
+                    {!user ?<Button onClick={signIn} >Login</Button>:<Button onClick={logOut} >Logout</Button> }
+
+
                 </div>
             </Drawer>
         </div>

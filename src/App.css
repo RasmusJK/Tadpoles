@@ -38,7 +38,7 @@
 
 .App-link {
   color: #75d4ee;
-  
+
 }
 
 
@@ -52,13 +52,13 @@
   padding-inline: rgb(46, 114, 216);
 }
 .Quiz {
+
   background-color: white;
   width: 300px;
   height: 400px;
   border-radius: 10px orange;
   color:rgb(3, 0, 8);
   padding: 130px 40px;
-
 
   display: flex;
   flex-direction: column;
@@ -73,6 +73,7 @@
   border: none;
   border-radius: 5px;
   font-size: 20px;
+
 }
 .App Button {
   background: orange;
@@ -81,7 +82,7 @@
   margin: 5px;
   border: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 15px;
 }
 .Options {
   width: 100%;
