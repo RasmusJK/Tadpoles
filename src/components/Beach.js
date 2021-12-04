@@ -1,29 +1,11 @@
 import '../App.css';
 import React, {useEffect, useState} from "react";
-// {Button} from "@mui/material";
 import axios from "axios";
 import TopBar from "./TopBar";
 import MapIcon from '@mui/icons-material/Map';
-import {Card, Container, Icon} from "@mui/material";
-/*
-const GetBeach = async () => {
-    setLoading(true);
-
-    try {
-        const response = await fetch(`https://open-api.myhelsinki.fi/v1/place/${Id}`);
-        const data = await response.json();
-        setBeach(data);
-
-        const result = await axios(`https://open-api.myhelsinki.fi/v1/place/${Id}`);
-        setBeach(result.data);
-
-    } catch (error) {
-        setError(true);
-    }
-    setLoading(false);
-    console.log("hmhm",beach)
-};
-*/
+import {Button, Card, Container, Icon} from "@mui/material";
+import Feedback from "./Feedback";
+import {Questions} from "../Utils/QuestionBank";
 
 const Beach = ({match}) => {
 
@@ -40,6 +22,7 @@ const Beach = ({match}) => {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [clicked, setClicked] = useState(false);
 
     const fetchData = () => {
         try {
@@ -74,7 +57,6 @@ const Beach = ({match}) => {
                         setTemp(allWeather.data.data[allWeather.data.data.length - 1].temp_air)
                     }
 
-                    //  setBeachId(allDataBeach.data.id);
                     setBeachNameEn(allDataBeach.data.name.fi);
                     setAddress(allDataBeach.data.location.address.street_address);
                     setDescription(allDataBeach.data.description.body);
@@ -93,17 +75,6 @@ const Beach = ({match}) => {
             try {
                 setLoading(true)
                 fetchData();
-                /*
-                const response = await fetch(`https://open-api.myhelsinki.fi/v1/place/${Id}`);
-                const beachResponse = await fetch(`https://iot.fvh.fi/opendata/uiras/70B3D57050004FB9_v1.json`);
-                const data = await response.json();
-                console.log("weatherdata",data)
-                setBeachId(data.id);
-                setBeachNameEn(data.name.fi);
-                setAddress(data.location.address.street_address);
-                setDescription(data.description.body);
-*/
-
 
             } catch (error) {
                 console.log(error);
@@ -118,44 +89,40 @@ const Beach = ({match}) => {
     }, []);
 
 
-    //{error && <div>Something went wrong ...</div>}
-    /*
-    {loading ?(
-        <div>Loading...</div>
-    ) :(
-        <div>
-            <p>{beach.id} </p>
-            <Button onClick={()=>{
-                console.log(JSON.stringify(beach));
-            }}>hmhmmhmh</Button>
-
-        </div>
-    ) }
-    */
-
-
     return (
         <div>
             <TopBar/>
+
             <div className="App">
                 {error && <div>Something went wrong ...</div>}
-                {loading ? (
-                    <div>Loading...</div>
+                {clicked ? (
+                    <Card style={{width: "100%", maxWidth: "400px", marginTop: "30px"}}>
+                        <Feedback id={Id}/>
+                        <Button variant="contained" onClick={() => {
+
+                            setClicked(false);
+                        }}>Go back to info </Button>
+
+                    </Card>
                 ) : (
                     <Card style={{width: "100%", maxWidth: "400px", marginTop: "30px"}}>
 
                         <h2 style={{fontWeight: "bold"}}>{beachNameEn}</h2>
 
-                            <p> <MapIcon onClick={()=>{
-                                window.open(`https://www.google.com/maps/place/${address}`,"_blank");
-                            }} />{address}</p>
+                        <p><MapIcon style={{cursor: "pointer"}} onClick={() => {
+                            window.open(`https://www.google.com/maps/place/${address}`, "_blank");
+                        }}/>{address}</p>
 
                         <p>{description}</p>
                         <p>Water temp: {water}°C</p>
                         <p>Air temp: {temp}°C</p>
+                        <Button variant="contained" onClick={() => {
+                            setClicked(true);
+                        }}>Go to reviews </Button>
                     </Card>
                 )}
             </div>
+
         </div>
     );
 

@@ -77,9 +77,9 @@ export const Questions = [
 ];
 export const Hints = [
     [
-    "You can’t see it",
+        "You can’t see it",
 
-],
+    ],
     [
         "You can’t see it",
         "You can’t hear it",

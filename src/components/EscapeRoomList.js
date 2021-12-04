@@ -39,7 +39,7 @@ const EscapeRoomList=()=>{
         <div className="App">
 
             <ul className="App">
-                {beaches.map(beach =>(
+                {beaches.map(beach => (
                         beach === "Hietarannan uimaranta" ? (
                             <Button key={beach} variant="contained" onClick={()=>{history.push('/escaperoom')}}>
                                 {beach}

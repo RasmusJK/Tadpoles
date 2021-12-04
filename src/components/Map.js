@@ -10,15 +10,15 @@ const Map = () => {
     useEffect(() => {
         getBeaches().then();
         // eslint-disable-next-line array-callback-return
-       /* beach.map(b=>{
-            console.log(b.name.fi, b.id)
+        /* beach.map(b=>{
+             console.log(b.name.fi, b.id)
 
-        })*/
+         })*/
         // eslint-disable-next-line
     }, []);
 
     const getBeaches = async () => {
-      //  const response = await fetch('https://open-api.myhelsinki.fi/v2/places/?tags_search=Beach');
+        //  const response = await fetch('https://open-api.myhelsinki.fi/v2/places/?tags_search=Beach');
         const response = await fetch('https://node-proxy-server-v2.herokuapp.com/');
 
 
