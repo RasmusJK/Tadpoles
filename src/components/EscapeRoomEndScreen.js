@@ -55,11 +55,15 @@ const EscapeRoomEndScreen = () => {
     return (
         <div className="Quiz">
 
-            <h1 style={{alignSelf: "center"}}>EscapeRoom Completed</h1>
+            <h1 style={{alignSelf: "center" , paddingLeft: "20%"}}>EscapeRoom Completed</h1>
             <h3> {score}/{Questions.length + 1}</h3>
             <div>
                 <div>
-                    {status ? <TextField id="outlined-basic" label="Final question" variant="outlined"
+                    {status ? <TextField sx={{
+                            width: "300px",
+                            height: "50px",
+                            margin: "5px",
+                        }} id="outlined-basic" label="Final question" variant="outlined"
                                          onChange={(e => setAnswer(e.target.value))}/> :
                         <p>Already answered</p>}
                     {status ? <Button variant="contained" onClick={compare}>Answer</Button> :
@@ -67,9 +71,9 @@ const EscapeRoomEndScreen = () => {
                             history.push('/escaperooms')
                         }}>Return to escaperooms list</Button>}
                 </div>
-                <p>Hints:</p>
+                <h2 style={{margin: "auto", width: "50%", textAlign: "center"}}>Hints:</h2>
                 {hints.map(h => (
-                    <p key={h}>{h}</p>
+                    <h3 style={{margin: "auto", width: "75%", textAlign: "center"}} key={h}>{h}</h3>
                 ))}
             </div>
 

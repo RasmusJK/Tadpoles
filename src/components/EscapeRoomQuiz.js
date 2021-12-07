@@ -13,7 +13,7 @@ const EscapeRoomQuiz = () => {
         if (Questions[currQuestion].answer === optionChosen) {
             setScore(score + 1);
         }
-        // alert(score);
+
         setCurrQuestion(currQuestion + 1)
     };
     const finish = () => {

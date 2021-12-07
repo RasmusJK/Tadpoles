@@ -9,11 +9,7 @@ import axios from "axios";
 const EscapeRoomList=()=>{
     const history= useHistory()
     const [beaches, setBeaches] = useState([]);
- /*   const addButton = (beach) =>{
-        return(   <Button variant="contained" onClick={()=>{history.push('/escaperoom')}}>
-            <p>{beach}</p>
-        </Button>);
-    } */
+
     const fetchData=() =>{
         axios.get('https://node-proxy-server-v2.herokuapp.com/').then((res )=>{
            console.log(res.data);
@@ -28,12 +24,7 @@ const EscapeRoomList=()=>{
     }
     useEffect(() => {
        fetchData();
-        // eslint-disable-next-line array-callback-return
-        /* beach.map(b=>{
-             console.log(b.name.fi, b.id)
 
-         })*/
-        // eslint-disable-next-line
     }, []);
     return(
         <div className="App">

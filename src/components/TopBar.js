@@ -14,6 +14,7 @@ import {auth} from '../Utils/firebase';
 import {signInWithPopup, GoogleAuthProvider, signOut} from 'firebase/auth';
 import {useAuthState} from 'react-firebase-hooks/auth';
 
+
 const useStyles = makeStyles(() => ({
 
     drawer: {
@@ -26,6 +27,7 @@ const useStyles = makeStyles(() => ({
 
 
 const TopBar = () => {
+
     const history = useHistory();
     const [open, setOpen] = useState(false);
     const [user, loading, error] = useAuthState(auth);
@@ -58,7 +60,7 @@ const TopBar = () => {
     return (
         <div>
             <Box sx={{flexGrow: 1}}>
-                <AppBar position="static">
+                <AppBar position="sticky">
                     <Toolbar>
                         <IconButton onClick={handleDrawer}
                                     size="large"
@@ -69,7 +71,7 @@ const TopBar = () => {
                         >
                             <MenuIcon/>
                         </IconButton>
-                        <Typography style={{cursor:"pointer"}} variant="h6" component="div" sx={{flexGrow: 1}} align="center" onClick={() => {
+                        <Typography style={{cursor:"pointer", paddingRight: "2%"}} variant="h6" component="div" sx={{flexGrow: 1}} align="center" onClick={() => {
                             history.push('/')
                         }}>
                             Beach App
@@ -78,6 +80,7 @@ const TopBar = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
+            <Toolbar/>
             <Drawer
                 anchor="left"
                 open={open}

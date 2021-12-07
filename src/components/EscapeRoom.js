@@ -12,8 +12,8 @@ const EscapeRoom = () => {
 
 
     return (
-        <div className="EscapeRoom">
-            <p>Escape Room</p>
+        <div style={{marginTop: "20px"}} className="EscapeRoom">
+
             <QuizContext.Provider value={{gameState, setGameState, score, setScore}}>
                 {gameState === "menu" && <EscapeRoomMenu/>}
                 {gameState === "quiz" && <EscapeRoomQuiz/>}
