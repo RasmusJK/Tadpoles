@@ -80,7 +80,7 @@ const TopBar = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Toolbar/>
+
             <Drawer
                 anchor="left"
                 open={open}
